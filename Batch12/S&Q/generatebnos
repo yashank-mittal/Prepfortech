@@ -1,0 +1,29 @@
+https://ideone.com/PDY8B3
+
+#include <iostream>
+using namespace std;
+void gen(int n)
+{
+	queue<string> q;
+	q.push("1");
+	while(n--)
+	{
+		string s1=q.front();
+		q.pop();
+		print s1;
+		string s2=s1;
+ 
+		q.push(s1+"0");
+			q.push(s2+"1");
+ 
+	}
+ 
+ 
+}
+int main() {
+int n=5;
+ 
+gen(n);
+ 
+	return 0;
+}
