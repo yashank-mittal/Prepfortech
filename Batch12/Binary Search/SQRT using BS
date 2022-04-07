@@ -1,0 +1,14 @@
+int sqrt(int n)
+{
+	int l=0;
+	int h=n;
+	while(l<=h)
+	{
+		int m=(l+h)/2;
+		if(m*m<=n) {
+			ans=m;
+			l=mid+1;
+		}
+    		else high=mid-1;		
+	}
+}return ans;
