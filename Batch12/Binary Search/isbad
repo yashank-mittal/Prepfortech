@@ -1,0 +1,19 @@
+int mno(int a[],int n)
+{
+	
+	int l=0;
+	int r=n;
+	
+	while(l<=r)
+	{
+		int m=(l+h)/2;
+		
+		if(isbad(m)==TRUE){
+			ans=mid;
+			r=mid-1
+		}
+	
+		
+		else l=m+1;
+	}
+}
