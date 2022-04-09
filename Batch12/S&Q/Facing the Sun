@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int count(int a[], int size)
+{
+	int c=1;
+	int cur=arr[0];
+	for(int i=1;i<n;i++)
+	{
+		if(ar[i]>curr) c++; curr=arr[i];
+		
+	
+	}
+	return c;
+}
+int main() {
+	// your code goes here
+	
+	
+	int arr[]={};
+	int n= a.size();
+	count(arr,n);
+	return 0;
+}

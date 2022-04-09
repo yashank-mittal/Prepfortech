@@ -1,0 +1,17 @@
+int mno(int a[],int n)
+{
+	
+	int l=0;
+	int r=n-1;
+	
+	while(l<=r)
+	{
+		int m=(l+h)/2;
+		
+		if(a[m] !=m+1  && a[m-1]==m) return m+1;
+		
+		if(a[m]!=m+1)  rm-1;
+		
+		else l=m+1;
+	}
+}
