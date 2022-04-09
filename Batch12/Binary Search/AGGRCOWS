@@ -1,0 +1,32 @@
+bool canplace(int C,int N,int A[],int sep)
+{
+
+int cows=1;
+int location=a[0];
+for(int i=1;i<n;i++)
+{
+int curlocation=a[i];
+if(curlocation-location>=sep)
+{
+cows++;
+location=currentlcoation[i];
+}
+if(cows==C)
+retrun T;
+
+else return F;
+}
+
+s=0,e=a[n-1]-a[0];
+while(s<=e)
+{
+int m=s+e/2;
+if(canplace(C,N,A,m))
+ans=mid;
+s=mid+1;
+
+else e=m-1;
+}
+
+
+https://www.spoj.com/problems/AGGRCOW/
