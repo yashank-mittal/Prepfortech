@@ -8,16 +8,12 @@ class Solution {
             for(int j=0; j<i; j++) {
                 lMax = Math.max(lMax, height[j]);
             }
-            
             int rMax = height[i];
             for(int j=i+1; j<n; j++){
                 rMax = Math.max(rMax, height[j]);
             }
-            
-            
             result = result + (Math.min(lMax, rMax) - height[i]);
         }
-        
         return result;
     }
 }
