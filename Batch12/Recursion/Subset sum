@@ -1,0 +1,13 @@
+bool subset(int a[],int n,int k)
+{
+if(k==0)
+return true;
+
+if(n<0 && k<0)
+retrun false;
+
+bool inc= subset(a,n-1,k-a[n]);
+bool exc= subset(a,n-1,k);
+
+retrun inc || exc;
+}
