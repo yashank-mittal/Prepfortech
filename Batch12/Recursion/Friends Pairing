@@ -1,0 +1,7 @@
+int pairing(int n)
+{
+if(n<=0) return 1;
+
+return pairing(n-1)+pairing(n-2)*(n-1);
+
+}
