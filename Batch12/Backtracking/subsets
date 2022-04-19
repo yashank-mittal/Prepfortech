@@ -1,0 +1,21 @@
+subset -1
+
+vector<vector<int> subset(int nums[])
+{
+	vector<vector<int>> list;
+	vector<int> templist;
+	// sort(nums)
+	backtrack(list,templist,nums,0);
+	return list;
+}
+void backtrack(list,templist,nums,int s)
+{
+	list.add(templist);
+	
+	for(int i=s;i<nums.length;i++)
+	{
+		templist.add(nums[i]);//choose 
+		backtrack(list,templist,nums,i+1);// backtrack 
+		templist.pop(templist.size()-1);//unchoose
+	}
+}
