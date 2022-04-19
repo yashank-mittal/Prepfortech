@@ -1,0 +1,75 @@
+Climbing steps
+
+class Solution {
+    public int climbStairs(int n) {
+          if(n < 2 ){
+              return 1;
+          }else{
+            return climbStairs(n-1) + climbStairs(n-2);  
+          }     
+    }
+}
+
+
+Power of 2 
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        
+        if(n == 1){
+            return true;
+        }
+        if(n<=0 || n%2!=0){
+            return false;
+        }
+        
+        return isPowerOfTwo(n/2);
+    }
+}
+
+Power of 3
+
+class Solution {
+    public boolean isPowerOfThree(int n) {
+          if(n == 1){
+              return true;
+          }
+          if(n<=0||n%3!=0){
+              return false;
+          }
+        return isPowerOfThree(n/3);
+    }
+    
+}
+
+Power of 4
+
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        if(n == 1){
+            return true;
+        }
+        if(n<=0||n%4!=0){
+            return false;
+        }
+        return isPowerOfFour(n/4);
+        
+    }
+}
+
+
+
+fibonacci-number
+
+class Solution {
+    public int fib(int n) {
+        if(n ==0){
+            return 0;
+        }else if(n == 1){
+            return 1;
+        }
+        else{
+            return fib(n-1) + fib(n-2); //  this was very easy to guess....already given in question this condition.We just need to figureout
+        }
+    }
+}
