@@ -9,12 +9,13 @@ Output : 3.14p
 Input : str = “xpix”
 Output : x3.14x
 """
-def replace_string(string=None):
-    if len(string)>=2:
-        if string[0]=="p" and string[1]=="i":
-            string.replace("pi","3.14",1)
-            replace_string(string[2:])
-        else:
-            string[0:1]+replace_string(string[1: ])
-    return print(string,"string")
-replace_string("pipe")
+# def replace_string(string=None):
+#     if len(string)>=2:
+#         if string[0]=="p" and string[1]=="i":
+#             string.replace("pi","3.14",1)
+#             replace_string(string[2:])
+#         else:
+#             string[0:1]+replace_string(string[1: ])
+#     print(string,"string")        
+#     return string
+# replace_string("pipe")
