@@ -1,0 +1,24 @@
+ /**
+ * class LLNode {
+ *     public:
+ *         int val;
+ *         LLNode *next;
+ * };
+ */
+bool solve(LLNode* head) {
+    
+    if(head==NULL) return true;
+
+    int prev=-1;
+    int pres;
+
+    while(head)
+    {
+        pres=head->val;
+        if(prev>=pres) return false;
+
+        prev=head->val;
+        head=head->next;
+    }
+return true;
+}
