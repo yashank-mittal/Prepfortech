@@ -1,0 +1,24 @@
+/**
+ * class LLNode {
+ *     public:
+ *         int val;
+ *         LLNode *next;
+ * };
+ */. 
+int solve(LLNode* node) {
+    int ans=0;
+    stack<int>s;
+    while(node)
+{
+        s.push(node->val);
+        node=node->next;
+}
+    int i=0;
+while(!s.empty())
+{
+    ans+=pow(2,i)*s.top();
+    i++;
+    s.pop();
+}
+return ans;
+}
