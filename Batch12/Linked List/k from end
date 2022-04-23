@@ -1,0 +1,13 @@
+https://binarysearch.com/problems/Kth-Last-Node-of-a-Linked-List
+
+for(i=0;i<k;i++)
+f=f.next;
+
+if(f==null) retrun s;
+
+while(f!=null)
+{
+	s=s.next;
+	f=f.next;
+}
+return s;
