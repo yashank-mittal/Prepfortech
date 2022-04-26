@@ -1,0 +1,27 @@
+class Solution {
+public:
+    
+    int nfib(int n, map<int,int> &mp)
+    {
+        if(n==0) return 0;
+        if(n==1)  return 1;
+        
+        
+        int currkey=n;
+        if(mp.find(n)!=mp.end())
+            return mp[n];
+        
+        int a=nfib(n-1,mp);
+        int b=nfib(n-2,mp);
+        
+        mp[currkey]=a+b;
+        
+        return mp[currkey];
+        
+        
+    }
+    int fib(int n) {
+        map<int,int> mp;
+        return nfib(n,mp);
+    }
+};
