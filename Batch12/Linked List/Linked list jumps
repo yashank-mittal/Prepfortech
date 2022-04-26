@@ -1,0 +1,36 @@
+/**
+ * class LLNode {
+ *     public:
+ *         int val;
+ *         LLNode *next;
+ * };
+ */
+LLNode* solve(LLNode* node) {
+
+   LLNode *shift=node;
+    LLNode *assign=node;
+    int v;
+
+    while(shift->next !=NULL)
+    {
+        shift=assign;
+        v=shift->val;
+        while(v--)
+        {
+            shift=shift->next;
+            if(shift==Null){
+              assign->next=shift;
+            return node;
+            break;
+
+            } 
+        }
+        assign->next=shift;
+        assign=assign->next;
+
+    }
+
+assign ->next=NULL;
+return node;
+}
+   
