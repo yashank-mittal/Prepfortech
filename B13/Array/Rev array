@@ -1,1 +1,7 @@
 //code
+while(i<j)
+{
+swap(a[i],a[j]);
+i++;
+j--;
+}
