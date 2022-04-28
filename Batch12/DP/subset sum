@@ -1,0 +1,32 @@
+int kp(int nums[])
+{
+	map<string,int> mp;
+	int totalsum=0;
+	total=accumulate(nums)
+	if(total%2!=0) return false;
+	 
+	return possible(nums,0,totalsum/2,n,mp);
+}
+bool possible(int nums[],int idx,int target,int n,map<string,int> mp)
+{
+	  if(target==0) return true;
+	  if(idx>=n) return false;
+	  
+	
+	string currkey=to_string(idx)+"-"+to_string(target);
+	
+	if(mp.find(currkey)!=mp.end()) return mp[currkey];
+	bool consider=false;
+	if(nums[idx]<target) 
+	bool consider= possible(nums,target-nums[idx],n,idx+1,mp);
+	
+	if(consider)
+	{
+		mp[currkey]=consider;
+		return true;
+	}
+	
+bool dontconsider=possible(nums,target,n,curr+1,mp);
+	mp[currkey]=(conside || dontconsider);
+	return mp[currkey];
+}
