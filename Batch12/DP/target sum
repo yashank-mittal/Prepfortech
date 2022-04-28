@@ -1,0 +1,30 @@
+
+https://leetcode.com/problems/target-sum/
+
+class Solution {
+    public int findTargetSumWays(int[] nums, int target) {
+        
+        return tways(nums,target,0,new HashMap<String,Integer> ());
+        
+    }
+    public int tways(int [] nums, int target, int curr,HashMap<String,Integer> mp)
+    {
+        if(curr>=nums.length) 
+        {
+            if(target!=0) return 0;
+            else return 1;
+        }
+        
+        String currkey=Integer.toString(curr)+"-"+Integer.toString(target);
+        
+        if(mp.containsKey(currkey)) return mp.get(currkey);
+        
+         int pos=tways(nums,target-nums[curr],curr+1,mp);
+         int neg=tways(nums,target+nums[curr],curr+1,mp);
+        
+        mp.put(currkey,pos+neg);
+        
+        return mp.get(currkey);
+        
+    }
+}
