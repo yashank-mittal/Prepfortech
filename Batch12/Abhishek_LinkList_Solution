@@ -1,0 +1,173 @@
+https://leetcode.com/problems/middle-of-the-linked-list/submissions/
+Find middle node in linklist
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode shortPointer=head; ListNode longPointer=head;
+        
+        while(longPointer!=null && longPointer.next!=null){
+            shortPointer = shortPointer.next;
+            longPointer = longPointer.next.next;
+        }
+        return shortPointer;
+
+    }
+}
+
+https://leetcode.com/problems/reverse-linked-list/
+
+using recurssion:
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+       if(head == null || head.next == null){
+           return head;
+       }
+        
+       ListNode ans = reverseList(head.next); 
+        head.next.next = head;
+        head.next = null;
+        return ans;
+    }
+}
+
+using Stack: getting memory limit exceded
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        Stack s1 = new Stack();
+        ListNode dummy = null;
+        if(head == null && head.next == null){
+            return head;
+        }
+        while(head!=null){
+            s1.push(head);
+        }
+        
+        while(head!=null){
+            s1.pop();
+            dummy = head.next;
+        }
+        
+        return dummy; 
+    }
+}
+
+
+https://binarysearch.com/problems/Linked-List-to-Integer
+using stack:
+
+import java.util.*;
+
+/**
+ * class LLNode {
+ *   int val;
+ *   LLNode next;
+ * }
+ */
+class Solution {
+    public int solve(LLNode node) {
+        int ans = 0;
+        int i = 0;
+        Stack stack = new Stack();
+        while(node!=null){
+           stack.push(node.val);
+           node = node.next;
+        }
+       while(!stack.isEmpty()){
+          ans+= Math.pow(2,i) * (int)stack.peek();
+          i++;
+          stack.pop();
+
+       }
+  return ans;
+    }
+}
+
+import java.util.*;
+
+/**
+ * class LLNode {
+ *   int val;
+ *   LLNode next;
+ * }
+ */
+class Solution {
+    public int solve(LLNode node) {
+        int ans = 0;
+          while(node!=null){
+              ans = 2*ans + node.val;
+              node = node.next;
+          }
+  return ans;
+    }
+}
+
+https://leetcode.com/problems/merge-two-sorted-lists/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummyList;
+        
+        if(list1 == null){
+            return list2;
+        }
+        
+        if(list2 == null){
+            return list1;
+        }
+        
+        if(list1.val < list2.val){
+            list1.next = mergeTwoLists(list1.next,list2);
+                return list1;
+        }else{
+            list2.next = mergeTwoLists(list1,list2.next);
+                return list2;
+        }
+        
+    }
+}
+
+
+https://leetcode.com/problems/delete-node-in-a-linked-list/submissions/
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        //ListNode temp = node, prev=null;
+        
+        if(node == null){
+            return;
+        }
+        
+        node.val = node.next.val;
+        node.next = node.next.next;
+        
+    }
+}
