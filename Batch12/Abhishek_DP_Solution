@@ -1,0 +1,89 @@
+DP problems solution:
+
+https://leetcode.com/problems/climbing-stairs/submissions/
+class Solution {
+    
+   public int tWays(int currentStep,int totalStep,Map map){
+       //base condition
+        if(currentStep == totalStep) return 1;
+        if(currentStep > totalStep) return 0;
+       
+       int currentKey = currentStep;
+       
+       // checking already existing ans in map
+       if(map.containsKey(currentKey)){
+           int ans = (int)map.get(currentKey);
+            return ans;
+       }
+          
+       int firstStep =  tWays(currentStep + 1,totalStep,map);
+       int secondStep = tWays(currentStep + 2,totalStep,map);
+       map.put(currentKey,firstStep+secondStep);
+       
+       return (int)map.get(currentKey);
+          
+   }
+    public int climbStairs(int n) {
+       Map map = new HashMap();
+        return tWays(0,n,map);
+    }
+}
+
+https://leetcode.com/problems/fibonacci-number/submissions/
+class Solution {
+    
+    public int nFib(int n, Map map){
+         //base condition
+         if(n==0) return 0;
+         if(n==1) return 1;
+        
+         int currentKey = n;
+        
+        if(map.containsKey(currentKey)){
+            return (int)map.get(currentKey);
+        }
+        
+        int fib1 = nFib(n-1,map);
+        int fib2 = nFib(n-2,map);
+        
+        map.put(currentKey,fib1+fib2);
+        return (int)map.get(currentKey);
+    }
+    
+    public int fib(int n) {
+    Map map = new HashMap();
+        return nFib(n,map);
+    }
+}
+
+https://leetcode.com/problems/n-th-tribonacci-number/submissions/
+class Solution {
+    
+    public int nTribonacci(int n,Map map){
+        
+        if(n == 0) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 1;
+        
+        int currentKey = n;
+        
+        if(map.containsKey(currentKey)){
+            return (int)map.get(currentKey);
+        }
+        
+        int fib0 =nTribonacci(n-1,map);
+        int fib1= nTribonacci(n-2,map);
+        int fib2= nTribonacci(n-3,map);
+        
+        map.put(currentKey,fib0+fib1+fib2);
+        return (int) map.get(currentKey);
+        
+    }
+    
+    
+    public int tribonacci(int n) {
+    HashMap map = new HashMap();
+        return nTribonacci(n,map);
+        
+    }
+}
