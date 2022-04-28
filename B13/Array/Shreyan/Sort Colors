@@ -1,0 +1,18 @@
+        # python solution accepted on leetcode
+        
+        countZero = 0
+        countOne = 0 
+        countTwo = 0
+        for item in nums:
+            if item == 2:
+                countTwo+=1
+            if item == 1:
+                countOne+=1
+            if item == 0:
+                countZero+=1
+        for i in range(countZero):
+            nums[i]=0
+        for i in range(countZero,countZero+countOne):
+            nums[i]=1
+        for i in range(countZero+countOne,countZero+countOne+countTwo):
+            nums[i]=2
