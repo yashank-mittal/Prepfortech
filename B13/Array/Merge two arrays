@@ -1,0 +1,27 @@
+int i=0,j=0,k=0;
+while(i<m && j<n)
+{
+if(a1[i]<a2[j])
+{
+a3[k]=a1[i];
+k++;
+i++;
+}
+else 
+{
+a3[k]=a2[j];
+k++;
+j++;
+}
+while(i<m)
+{
+a3[k]=a1[i];
+k++;
+i++;
+}
+while(j<n)
+{
+a3[k]=a1[i];
+k++;
+i++;
+}
