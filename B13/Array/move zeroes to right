@@ -1,0 +1,15 @@
+https://binarysearch.com/problems/In-Place-Move-Zeros-to-End-of-List
+
+int i=0;
+int zeroes=0;
+
+for(int i: nums)
+{
+if(it==0) zeroes++;
+
+else nums[i++]=it;
+
+while(zeroes>0)
+{
+nums[i++]=0;
+}
