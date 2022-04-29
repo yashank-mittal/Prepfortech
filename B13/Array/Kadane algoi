@@ -1,0 +1,9 @@
+int maxs=a[0];
+int curr=a[0];
+for(int i=1;i<n;i++)
+{
+curr=max(a[i],curr+a[i]);
+maxs=max(maxs,curs);
+}
+return maxr;
+}
