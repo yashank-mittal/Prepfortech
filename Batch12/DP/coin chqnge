@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        vector<vector<int>> dp();
+        int ans=mincoins(0,coins,amt,dp);
+        
+    }
+    int mincoins(int curr,coins,int amount,dp)
+    {
+        if(amt==0) return 0;
+        if(curr>=size()) return -1;
+        
+        if(dp[curr][amt]!=-1) return dp[curr][amt];
+        
+        if(coins[curr]<=amt)
+         int   consider=1+mincoins(curr,coins,amt-coins[curr],dp);
+        
+int dontconsider=mincoins(curr,coins,amt,dp);
+        
+        return dp[curr][amt]=min(consider,dontconsider);
+    }
+};
