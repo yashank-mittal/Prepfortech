@@ -1,0 +1,21 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        parent=[]
+        if numRows == 0:
+            return parent
+        parent.append([1])
+        if numRows == 1:
+            return parent
+        parent.append([1,1])
+        if numRows == 2:
+            return parent
+
+        for i in range(3,numRows+1):
+            temp=[1]
+            for j in range(1,i+1):
+                if j < len(parent[len(parent)-1]):
+                    temp.append(parent[len(parent)-1][j-1]+parent[len(parent)-1][j])
+            temp.append(1)
+            parent.append(temp)
+            
+        return parent

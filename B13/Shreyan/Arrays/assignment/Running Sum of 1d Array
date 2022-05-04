@@ -1,0 +1,8 @@
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        leftArray=[]
+        left=0
+        for i in range(len(nums)):
+            leftArray.append(left+nums[i])
+            left=leftArray[i]
+        return leftArray

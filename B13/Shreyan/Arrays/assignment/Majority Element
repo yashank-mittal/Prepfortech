@@ -1,0 +1,15 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        
+        if len(nums)==1:
+            return nums[0]
+        
+        occurance= len(nums) // 2 + 1
+        map = {}
+        for item in nums:
+            if item in map:
+                map[item]+=1
+                if map[item] >=occurance:
+                    return item
+            else:
+                map[item]=1       
