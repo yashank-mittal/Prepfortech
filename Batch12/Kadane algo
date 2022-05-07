@@ -1,0 +1,18 @@
+largest subarray sum in a array
+
+---kadanes algo
+
+-2,-3,4,-1,-2,1,5,-3
+
+
+int maxsofar=a[0];
+
+int maxx=a[0];
+
+for(int i=0;i<n;i++)
+{
+maxx=max(a[i],maxx+a[i]);
+maxsofar=max(maxsofar,maxx);
+}
+
+return maxsofar;
