@@ -1,0 +1,19 @@
+stacks ;
+queue q;
+q.push(root);
+while(q.empty()==F)
+{
+root=q.front();
+q.pop();
+s.push(root);
+
+if(root.right)
+q.push(root.right);
+if(root.left)
+q.push(root.left);
+
+while(s.empty()==f)
+root=s.top();
+print(root.data);
+s.pop();
+}
