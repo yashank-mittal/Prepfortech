@@ -6,7 +6,7 @@ while(j<n)
 {
 sum=sum+a[j];
 j++;
-}
+
 while(sum > k) && (i<j)
 {//contract
 sum-=a[i];
