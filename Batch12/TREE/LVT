@@ -1,0 +1,17 @@
+void print LVT(Node *root)
+{
+if(root==null)
+return;
+
+queue q;
+q.push(root);
+
+while(q.empty()==False)
+{
+Node * curr=q.front();
+print(curr.data);
+q.pop();
+if(node.left)
+q.push(curr.left);
+if(node.right)
+q.push(curr.right);
