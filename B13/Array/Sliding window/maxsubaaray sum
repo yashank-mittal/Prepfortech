@@ -1,0 +1,25 @@
+int findmax(int a[],int k)
+{.   
+int max=0;
+int left=0;
+int right=0;
+int windowsum=0;
+while(right<n)
+{
+
+if(right-left+1<k)
+{
+windowsum=windowsum+a[right];
+right++;
+}
+if(right-left+1==k)
+{
+windowsum+=a[right];
+maxs=max(sum,maxs);
+windowsum-=ar[left];
+i++;
+j++;
+}
+return maxs;
+}
+
